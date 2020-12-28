@@ -11,6 +11,8 @@
                 <p>{{ $task->title }}</p>
                 <p class="text-2xl">Description</p>
                 <p>{{ $task->description }}</p>
+                <p class="text-2xl">Attribué à</p>
+                <p>{{ $task->attributedat }}</p>
                 <p class="text-2xl">Etat</p>
                 <p>
                     @if($task->done)

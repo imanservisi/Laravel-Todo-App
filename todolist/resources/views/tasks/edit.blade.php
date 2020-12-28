@@ -24,6 +24,10 @@
                         <x-jet-label value="Description" />
                         <textarea class="form-input rounded-md shadow-sm mt-1" style="width: 100%" id="description" name="description" placeholder="Description de la tâche">{{ old('description', $task->description) }}</textarea>
                     </div>
+                    <div class="mt-4">
+                        <x-jet-label value="Attributedat" />
+                        <x-jet-input class="block mt-1 w-full" type="text" id=attributedat name="attributedat" :value="old('attributedat', $task->attributedat)" placeholder="Attribué à" autofocus />
+                    </div>
                     <div class="block mt-4">
                         <label class="flex items-center">
                             <input type="checkbox" class="form-checkbox" id="done" name="done" @if(old('done', $task->done)) checked @endif>

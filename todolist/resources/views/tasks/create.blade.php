@@ -25,7 +25,7 @@
                     </div>
                     <div class="mt-4">
                         <x-jet-label value="Attributedat" />
-                        <x-jet-input class="block mt-1 w-full" type="text" id=attributedat name="attributedat" :value="old('attributedat')" placeholder="Attribué à" required autofocus />
+                        <x-jet-input class="block mt-1 w-full" type="text" id=attributedat name="attributedat" :value="old('attributedat')" placeholder="Attribué à" autofocus />
                     </div>
                     <div class="flex items-center justify-end mt-4">
                         <x-jet-button class="ml-4">

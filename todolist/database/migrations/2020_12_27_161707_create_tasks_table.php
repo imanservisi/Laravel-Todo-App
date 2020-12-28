@@ -16,10 +16,16 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('userid')->nullable();
             $table->string('title');
             $table->text('description');
             $table->boolean('done')->default(false);
             $table->string('attributedat')->nullable();
+            $table->foreign('attributedat')
+                ->references('email')
+                ->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 

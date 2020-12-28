@@ -43,6 +43,8 @@ class TaskController extends Controller
         $task = new Task;
         $task->title = $request->title;
         $task->description = $request->description;
+        $task->userid = $request->userid;
+        $task->attributedat = $request->attributedat;
         $task->save();
         return redirect('/tasks')->with('message', "La tâche a bien été créée !");
     }
@@ -84,6 +86,8 @@ class TaskController extends Controller
         ]);
         $task->title = $request->title;
         $task->description = $request->description;
+        $task->userid = $request->userid;
+        $task->attributedad = $request->attributedat;
         $task->done = $request->has('done');
         $task->save();
         return redirect('/tasks')->with('message', "La tâche a bien été modifiée !");
