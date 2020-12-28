@@ -26,7 +26,7 @@
                     </div>
                     <div class="block mt-4">
                         <label class="flex items-center">
-                            <input type="checkbox" class="form-checkbox" id="state" name="state" @if(old('state', $task->state)) checked @endif>
+                            <input type="checkbox" class="form-checkbox" id="done" name="done" @if(old('done', $task->done)) checked @endif>
                             <span class="ml-2 text-sm text-gray-600">Tâche accomplie</span>
                         </label>
                     </div>

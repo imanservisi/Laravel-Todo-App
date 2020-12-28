@@ -23,6 +23,10 @@
                         <x-jet-label value="Description" />
                         <textarea class="form-input rounded-md shadow-sm mt-1" style="width: 100%" id="description" name="description" placeholder="Description de la tâche">{{ old('description') }}</textarea>
                     </div>
+                    <div class="mt-4">
+                        <x-jet-label value="Attributedat" />
+                        <x-jet-input class="block mt-1 w-full" type="text" id=attributedat name="attributedat" :value="old('attributedat')" placeholder="Attribué à" required autofocus />
+                    </div>
                     <div class="flex items-center justify-end mt-4">
                         <x-jet-button class="ml-4">
                             Envoyer

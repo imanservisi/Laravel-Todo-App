@@ -44,7 +44,7 @@ class TaskController extends Controller
         $task->title = $request->title;
         $task->description = $request->description;
         $task->save();
-        return back()->with('message', "La tâche a bien été créée !");
+        return redirect('/tasks')->with('message', "La tâche a bien été créée !");
     }
 
     /**
@@ -86,7 +86,7 @@ class TaskController extends Controller
         $task->description = $request->description;
         $task->done = $request->has('done');
         $task->save();
-        return back()->with('message', "La tâche a bien été modifiée !");
+        return redirect('/tasks')->with('message', "La tâche a bien été modifiée !");
     }
 
     /**
