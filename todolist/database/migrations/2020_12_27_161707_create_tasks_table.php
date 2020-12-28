@@ -13,10 +13,16 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('userid')->nullable();
+            $table->unsignedBigInteger('userid')->nullable();
+            $table->foreign('userid')
+                ->references('users')
+                ->on('id')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
             $table->string('title');
             $table->text('description');
             $table->boolean('done')->default(false);

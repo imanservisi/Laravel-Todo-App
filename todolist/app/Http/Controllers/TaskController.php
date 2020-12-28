@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use App\Models\User;
 
 class TaskController extends Controller
 {
@@ -12,10 +13,12 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug = null)
     {
+        $query = $slug ? User::whereSlug($slug)->firstOrFail()->tasks() : Task::query();
+        $users = $query->oldest('email');
         $tasks = Task::all();
-        return view('tasks.index', compact('tasks'));
+        return view('tasks.index', compact('tasks', 'users'));
     }
 
     /**

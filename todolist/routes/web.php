@@ -22,4 +22,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('user/tasks', [TaskController::class, 'index'])->name('tasks.userid');
+
 Route::resource('tasks', TaskController::class)->middleware('auth');
