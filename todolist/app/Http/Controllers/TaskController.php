@@ -87,7 +87,7 @@ class TaskController extends Controller
         $task->title = $request->title;
         $task->description = $request->description;
         $task->userid = $request->userid;
-        $task->attributedad = $request->attributedat;
+        $task->attributedat = $request->attributedat;
         $task->done = $request->has('done');
         $task->save();
         return redirect('/tasks')->with('message', "La tâche a bien été modifiée !");

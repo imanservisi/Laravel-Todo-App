@@ -27,6 +27,9 @@
                     <p class="text-2xl">Dernière mise à jour</p>
                     <p>{{ $task->updated_at->format('d/m/Y') }}</p>
                 @endif
+                <div>
+                    <a href="{{ route('tasks.index')  }}"><x-jet-button type="button" class="btn btn-warning" >Retour liste</x-jet-button></a>
+                </div>
             </div>
         </div>
     </div>

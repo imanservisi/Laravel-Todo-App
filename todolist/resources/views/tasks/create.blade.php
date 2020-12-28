@@ -30,8 +30,10 @@
                     <div class="flex items-center justify-end mt-4">
                         <x-jet-button class="ml-4">
                             Envoyer
-                        </x-jet-button>
+                        </x-jet-button> |
+                        <a href="{{ route('tasks.index')  }}"><x-jet-button type="button" class="btn btn-warning" >Retour liste</x-jet-button></a>
                     </div>
+
                 </form>
             </div>
         </div>

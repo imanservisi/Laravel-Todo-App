@@ -13,6 +13,7 @@
                     <tr>
                         <th class="px-4 py-2 w-1/4">Titre</th>
                         <th class="px-4 py-2 w-1/4">Etat</th>
+                        <th class="px-4 py-2 w-1/4">Qui</th>
                         <th class="px-4 py-2 w-1/6"></th>
                         <th class="px-4 py-2 w-1/6"></th>
                         <th class="px-4 py-2 w-1/6"></th>
@@ -23,6 +24,7 @@
                         <tr>
                             <td class="px-4 py-3">{{ $task->title }}</td>
                             <td class="px-4 py-3">@if($task->done) Accomplie @else A faire @endif</td>
+                            <td class="px-4 py-3">{{ $task->attributedat }}</td>
                             <td class="px-4 py-3"><a href="{{ route('tasks.show', $task->id) }}" role="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Voir</a></td>
                             <td class="px-4 py-3"><a href="{{ route('tasks.edit', $task->id) }}" role="button" class="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Modifier</a></td>
                             <td class="px-4 py-3">
