@@ -18,7 +18,15 @@
                     <div class="mt-4">
                         <x-jet-label value="Titre" />
                         <x-jet-input class="block mt-1 w-full" type="text" id=title name="title" :value="old('title')" placeholder="Titre de la tâche" required autofocus />
+
                     </div>
+
+                    <div style="display: none">
+                        <x-jet-label value="Userid" />
+
+                        <x-jet-input class="block mt-1 w-full" type="text" id=userid name="userid" value="{{ Auth::user()->id }}" placeholder="Titre de la tâche" autofocus />
+                    </div>
+
                     <div class="mt-4">
                         <x-jet-label value="Description" />
                         <textarea class="form-input rounded-md shadow-sm mt-1" style="width: 100%" id="description" name="description" placeholder="Description de la tâche">{{ old('description') }}</textarea>

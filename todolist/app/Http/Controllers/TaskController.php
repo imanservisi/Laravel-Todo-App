@@ -13,12 +13,15 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug = null)
+    public function index()
     {
-        $query = $slug ? User::whereSlug($slug)->firstOrFail()->tasks() : Task::query();
-        $users = $query->oldest('email');
-        $tasks = Task::all();
-        return view('tasks.index', compact('tasks', 'users'));
+        /*$query = $slug ? User::whereSlug($slug)->firstOrFail()->tasks() : Task::query();
+        $users = $query->oldest('email');*/
+        $tasks = Task::where('userid', '=', auth()->user()->id)
+            ->orWhere('attributedat', '=', auth()->user()->email)
+            ->get()
+            ;
+        return view('tasks.index', compact('tasks'));
     }
 
     /**

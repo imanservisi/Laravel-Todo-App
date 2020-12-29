@@ -17,12 +17,12 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('userid')->nullable();
+            $table->unsignedBigInteger('userid');
             $table->foreign('userid')
-                ->references('users')
-                ->on('id')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+                ->references('id')
+                ->on('users')
+                /*->onDelete('restrict')
+                ->onUpdate('restrict')*/;
             $table->string('title');
             $table->text('description');
             $table->boolean('done')->default(false);
@@ -30,8 +30,8 @@ class CreateTasksTable extends Migration
             $table->foreign('attributedat')
                 ->references('email')
                 ->on('users')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+                /*->onDelete('restrict')
+                ->onUpdate('restrict')*/;
         });
     }
 
