@@ -13,7 +13,6 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
